@@ -17,7 +17,7 @@ export class AuthService {
 
   token: string;
   payload: any;
-
+     
   constructor() { }
 
   build_login_link(callbackPath = '') {

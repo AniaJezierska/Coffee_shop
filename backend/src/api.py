@@ -17,6 +17,13 @@ CORS(app)
 db_drop_and_create_all()
 
 # ROUTES
+
+@app.route('/')
+def handler():
+    return jsonify({
+        "success": True
+    })
+
 @app.route('/drinks')
 def get_drinks():
     drinks = Drink.query.all()
@@ -99,7 +106,7 @@ def delete_drink(payload, drink_id):
         abort(404)
     
     id = drink.long()['id']
-
+     
     try:
         drink.delete()
 
